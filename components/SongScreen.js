@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableHighlight, ListView } from 'react-native';
 import Video from 'react-native-video';
+import PlayerUI from './Player';
+
 
 
 
@@ -12,16 +14,15 @@ export default class SongScreen extends React.Component {
   render() {
     return(
       <View>
-        <Image
-             source={{ uri: this.props.song.albumImage }}>
-        </Image>
         <Text style={ styles.songTitle }>{this.props.song.title}</Text>
-        <Video source={{uri: this.props.song.url }}/>
-
       </View>
     );
   }
 }
+// <Image
+//   source={{ uri: this.props.song.albumImage }}>
+// </Image>
+// <Video source={{uri: this.props.song.url }}/>
 
 
 const styles = StyleSheet.create({

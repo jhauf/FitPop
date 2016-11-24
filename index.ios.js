@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import BrowseCategoriesView from './components/BrowseCategoriesView';
 import NowPlayingFooterView from './components/NowPlayingFooterView';
+import PlayerUI from './components/Player';
+
+
 import {
   AppRegistry,
   StyleSheet,
@@ -25,6 +28,7 @@ export default class FitPop extends Component {
             title: 'FitPop',
             component: BrowseCategoriesView
           }} />
+        <PlayerUI style={styles.player}/>
      </View>
     );
   }
@@ -36,6 +40,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
     backgroundColor: '#F5FCFF'
+  },
+  player: {
+    backgroundColor: 'black'
   },
   navContainer: {
     flex: 1

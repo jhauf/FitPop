@@ -1,4 +1,6 @@
 import React from 'react';
+import { Player } from 'react-native-audio-streaming';
+
 
 
 import {
