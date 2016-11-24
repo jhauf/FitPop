@@ -1,6 +1,5 @@
-import React, {
+import {
   AppRegistry,
-  Component,
   Image,
   Dimensions,
   StyleSheet,
@@ -12,11 +11,11 @@ import {Actions} from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from 'react-native-slider';
 import Video from 'react-native-video';
-
+import React from 'react';
 
 const window = Dimensions.get('window');
 
-class PlayerUI extends Component {
+export default class PlayerUI extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -98,7 +97,8 @@ class PlayerUI extends Component {
 
 
   render() {
-    let songPlaying = this.props.songs[this.state.songIndex];
+    debugger
+    let songPlaying = this.props.songs[0];
     let songPercentage;
     if( this.state.songDuration !== undefined ){
       songPercentage = this.state.currentTime / this.state.songDuration;
@@ -108,33 +108,33 @@ class PlayerUI extends Component {
 
     let playButton;
     if( this.state.playing ){
-      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-pause" size={70} color="#fff" />;
+      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-arrow-back-outline" size={70} color="#fff" />;
     } else {
-      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-play" size={70} color="#fff" />;
+      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-arrow-back-outline" size={70} color="#fff" />;
     }
 
     let forwardButton;
     if( !this.state.shuffle && this.state.songIndex + 1 === this.props.songs.length ){
-      forwardButton = <Icon style={ styles.forward } name="ios-skipforward" size={25} color="#333" />;
+      forwardButton = <Icon style={ styles.forward } name="ios-arrow-back-outline" size={25} color="#333" />;
     } else {
-      forwardButton = <Icon onPress={ this.goForward.bind(this) } style={ styles.forward } name="ios-skipforward" size={25} color="#fff" />;
+      forwardButton = <Icon onPress={ this.goForward.bind(this) } style={ styles.forward } name="ios-arrow-back-outline" size={25} color="#fff" />;
     }
 
     let volumeButton;
     if( this.state.muted ){
-      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="android-volume-off" size={18} color="#fff" />;
+      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-arrow-back-outline" size={18} color="#fff" />;
     } else {
-      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="android-volume-up" size={18} color="#fff" />;
+      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-arrow-back-outline" size={18} color="#fff" />;
     }
 
     let shuffleButton;
     if( this.state.shuffle ){
-      shuffleButton = <Icon onPress={ this.toggleShuffle.bind(this) } style={ styles.shuffle } name="ios-shuffle-strong" size={18} color="#f62976" />;
+      shuffleButton = <Icon onPress={ this.toggleShuffle.bind(this) } style={ styles.shuffle } name="ios-arrow-back-outline" size={18} color="#f62976" />;
     } else {
-      shuffleButton = <Icon onPress={ this.toggleShuffle.bind(this) } style={ styles.shuffle } name="ios-shuffle-strong" size={18} color="#fff" />;
+      shuffleButton = <Icon onPress={ this.toggleShuffle.bind(this) } style={ styles.shuffle } name="ios-arrow-back-outline" size={18} color="#fff" />;
     }
 
-    let image = songPlaying.albumImage ? songPlaying.albumImage : this.props.artist.background;
+    debugger
     return (
       <View style={styles.container}>
         <Video source={{uri: songPlaying.url }}
@@ -149,18 +149,11 @@ class PlayerUI extends Component {
             repeat={false}/>
 
         <View style={ styles.header }>
-          <Text style={ styles.headerText }>
-            { this.props.artist.name }
-          </Text>
+
         </View>
         <View style={ styles.headerClose }>
-          <Icon onPress={ Actions.pop } name="chevron-down" size={15} color="#fff" />
+          <Icon onPress={ Actions.pop } name="ios-arrow-back-outline" size={15} color="#fff" />
         </View>
-        <Image
-          style={ styles.songImage }
-          source={{uri: image,
-                        width: window.width - 30,
-                        height: 300}}/>
         <Text style={ styles.songTitle }>
           { songPlaying.title }
         </Text>
@@ -185,7 +178,7 @@ class PlayerUI extends Component {
         </View>
         <View style={ styles.controls }>
           { shuffleButton }
-          <Icon onPress={ this.goBackward.bind(this) } style={ styles.back } name="ios-skipbackward" size={25} color="#fff" />
+          <Icon onPress={ this.goBackward.bind(this) } style={ styles.back } name="ios-arrow-back-outline" size={25} color="#fff" />
           { playButton }
           { forwardButton }
           { volumeButton }
@@ -313,6 +306,3 @@ function formattedTime( timeInSeconds ){
     return(`${ withLeadingZero( minutes ) }:${ withLeadingZero( seconds.toFixed(0) ) }`);
   }
 }
-
-
-module.exports = Player;

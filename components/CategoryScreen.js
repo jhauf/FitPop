@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableHighlight, TouchableOpacity, ListView } from 'react-native';
 import Video from 'react-native-video';
 import SongScreen from './SongScreen';
+import PlayerUI from './Player';
 
 
 
@@ -26,6 +27,8 @@ export default class CategoryScreen extends React.Component {
   render() {
     let songsDataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }).cloneWithRows( this.props.category.songs );
     return(
+      <View>
+      <PlayerUI songs={this.props.category.songs}/>
       <ListView
         dataSource={ songsDataSource }
         style={ styles.songsList }
@@ -42,6 +45,7 @@ export default class CategoryScreen extends React.Component {
             </View>
           </TouchableOpacity>);
           }}/>
+          </View>
     );
   }
 }

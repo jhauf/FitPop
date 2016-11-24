@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BrowseCategoriesView from './components/BrowseCategoriesView';
 import NowPlayingFooterView from './components/NowPlayingFooterView';
-import PlayerUI from './components/Player';
 
 
 import {
@@ -28,7 +27,6 @@ export default class FitPop extends Component {
             title: 'FitPop',
             component: BrowseCategoriesView
           }} />
-        <PlayerUI style={styles.player}/>
      </View>
     );
   }
