@@ -1,7 +1,6 @@
 import React from 'react';
 import TrackScreen from './TrackScreen';
 import { TouchableOpacity } from 'react-native';
-import Video from 'react-native-video';
 
 
 import {
@@ -39,8 +38,6 @@ render() {
  );
 }
 }
-// <Video source={{uri: this.props.track.songs[0].url }}/>
-// <Text style={styles.trackArtist}>{this.props.track.user.username}</Text>
 
 const styles = StyleSheet.create({
   thumbnail: {

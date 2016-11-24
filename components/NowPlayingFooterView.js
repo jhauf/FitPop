@@ -17,7 +17,6 @@ const NowPlayingFooterView = ({nowPlaying}) => {
      </View>);
 };
 
-// <Text style={styles.trackArtist}>{nowPlaying.user.username}</Text>
 
 
 export default NowPlayingFooterView;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BrowseTracksView from './components/BrowseTracksView';
+import BrowseCategoriesView from './components/BrowseCategoriesView';
 import NowPlayingFooterView from './components/NowPlayingFooterView';
 import {
   AppRegistry,
@@ -23,7 +23,7 @@ export default class FitPop extends Component {
           barTintColor='#F5FCFF'
           initialRoute={{
             title: 'FitPop',
-            component: BrowseTracksView
+            component: BrowseCategoriesView
           }} />
         <NowPlayingFooterView />
      </View>

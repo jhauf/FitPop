@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableHighlight } from 'react-native';
-
+import Video from 'react-native-video';
 
 
 export default class TrackScreen extends React.Component {
   render () {
-    var largeImageUrl = this.props.track.songs[0].albumImage ? this.props.track.songs[0].albumImage.replace('-large', '-t300x300') : '';
+    var largeImageUrl = this.props.track.background ? this.props.track.background.replace('-large', '-t300x300') : '';
     return (
       <View style={styles.trackScreen}>
        <Image
@@ -13,6 +13,7 @@ export default class TrackScreen extends React.Component {
           source={{uri: largeImageUrl}}>
         </Image>
         <Text style={styles.trackTitle}>{this.props.track.songs[0].title}</Text>
+          <Video source={{uri: this.props.track.songs[0].url }}/>
         <View style={styles.buttonRow}>
           <TouchableHighlight style={styles.playButton}>
             <Text style={styles.playButtonText}>Play Track</Text>
@@ -22,7 +23,6 @@ export default class TrackScreen extends React.Component {
     );
   }
 }
-// <Text style={styles.trackArtist}>{this.props.track.user.username}</Text>
 const styles = StyleSheet.create({
   buttonRow: {
     flexDirection: 'row',
