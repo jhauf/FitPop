@@ -54,18 +54,7 @@ export default class PlayerUI extends React.Component {
     }
   }
 
-  goForward(){
-    this.setState({
-      songIndex: this.state.shuffle ? this.randomSongIndex() : this.state.songIndex + 1,
-      currentTime: 0,
-    });
-    this.refs.audio.seek(0);
-  }
 
-  randomSongIndex(){
-    let maxIndex = this.props.songs.length - 1;
-    return Math.floor(Math.random() * (maxIndex - 0 + 1)) + 0;
-  }
 
   setTime(params){
     if( !this.state.sliding ){
@@ -97,8 +86,7 @@ export default class PlayerUI extends React.Component {
 
 
   render() {
-    debugger
-    let songPlaying = this.props.songs[0];
+    let songPlaying = this.props.song;
     let songPercentage;
     if( this.state.songDuration !== undefined ){
       songPercentage = this.state.currentTime / this.state.songDuration;
@@ -108,33 +96,19 @@ export default class PlayerUI extends React.Component {
 
     let playButton;
     if( this.state.playing ){
-      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-arrow-back-outline" size={70} color="#fff" />;
+      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-pause" size={70} color="#fff" />;
     } else {
-      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-arrow-back-outline" size={70} color="#fff" />;
-    }
-
-    let forwardButton;
-    if( !this.state.shuffle && this.state.songIndex + 1 === this.props.songs.length ){
-      forwardButton = <Icon style={ styles.forward } name="ios-arrow-back-outline" size={25} color="#333" />;
-    } else {
-      forwardButton = <Icon onPress={ this.goForward.bind(this) } style={ styles.forward } name="ios-arrow-back-outline" size={25} color="#fff" />;
+      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-play" size={70} color="#fff" />;
     }
 
     let volumeButton;
     if( this.state.muted ){
-      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-arrow-back-outline" size={18} color="#fff" />;
+      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-volume-off" size={18} color="#fff" />;
     } else {
-      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-arrow-back-outline" size={18} color="#fff" />;
+      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-volume-up" size={18} color="#fff" />;
     }
 
-    let shuffleButton;
-    if( this.state.shuffle ){
-      shuffleButton = <Icon onPress={ this.toggleShuffle.bind(this) } style={ styles.shuffle } name="ios-arrow-back-outline" size={18} color="#f62976" />;
-    } else {
-      shuffleButton = <Icon onPress={ this.toggleShuffle.bind(this) } style={ styles.shuffle } name="ios-arrow-back-outline" size={18} color="#fff" />;
-    }
 
-    debugger
     return (
       <View style={styles.container}>
         <Video source={{uri: songPlaying.url }}
@@ -177,10 +151,8 @@ export default class PlayerUI extends React.Component {
           </View>
         </View>
         <View style={ styles.controls }>
-          { shuffleButton }
           <Icon onPress={ this.goBackward.bind(this) } style={ styles.back } name="ios-arrow-back-outline" size={25} color="#fff" />
           { playButton }
-          { forwardButton }
           { volumeButton }
         </View>
       </View>

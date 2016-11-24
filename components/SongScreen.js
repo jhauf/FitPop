@@ -6,6 +6,7 @@ import PlayerUI from './Player';
 
 
 
+
 export default class SongScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,7 @@ export default class SongScreen extends React.Component {
   render() {
     return(
       <View>
+        <PlayerUI song={this.props.song}/>
         <Text style={ styles.songTitle }>{this.props.song.title}</Text>
       </View>
     );
