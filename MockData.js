@@ -1,7 +1,7 @@
 const Artists = [
   {
-    name: "Breakbot",
-    background: "https://jgnatch-dropshare.s3.amazonaws.com/Screen-Shot-2016-03-01-15-29-06/Screen-Shot-2016-03-01-15-29-06.png",
+    name: "Spin",
+    background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
     songs: [
       {
         title: "Star Tripper",
@@ -36,8 +36,34 @@ const Artists = [
     ]
   },
   {
-    name: "The Beatles",
-    background: "http://jgnatch-dropshare.s3.amazonaws.com/Screen-Shot-2016-03-01-15-20-40/Screen-Shot-2016-03-01-15-20-40.png",
+    name: "Yoga",
+    background: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
+    songs: [
+      {
+        title: "Marooned",
+        album: "The Division Bell",
+        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+      },
+      {
+        title: "Sorrow",
+        album: "Delicate Sound of Thunder",
+        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+      },
+      {
+        title: "Yet Another Movie",
+        album: "A Momentary Lapse of Reason",
+        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+      },
+      {
+        title: "One of the Few",
+        album: "The Final Cut",
+        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+      },
+    ]
+  },
+  {
+    name: "Treadmill",
+    background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
     songs: [
       {
         title: "Something",
@@ -77,8 +103,8 @@ const Artists = [
     ]
   },
   {
-    name: "Daft Punk",
-    background: "http://jgnatch-dropshare.s3.amazonaws.com/Screen-Shot-2016-03-01-15-25-13/Screen-Shot-2016-03-01-15-25-13.png",
+    name: "Strength",
+    background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
     songs: [
       {
         title: "Giorgio",
@@ -113,34 +139,8 @@ const Artists = [
     ]
   },
   {
-    name: "Pink Floyd",
-    background: "http://jgnatch-dropshare.s3.amazonaws.com/Screen-Shot-2016-03-01-15-23-47/Screen-Shot-2016-03-01-15-23-47.png",
-    songs: [
-      {
-        title: "Marooned",
-        album: "The Division Bell",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Sorrow",
-        album: "Delicate Sound of Thunder",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Yet Another Movie",
-        album: "A Momentary Lapse of Reason",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "One of the Few",
-        album: "The Final Cut",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-    ]
-  },
-  {
-    name: "Andy Allo",
-    background: "http://jgnatch-dropshare.s3.amazonaws.com/Screen-Shot-2016-03-01-15-31-35/Screen-Shot-2016-03-01-15-31-35.png",
+    name: "Core",
+    background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960864/Elbow-Plank_idkd7w.jpg",
     songs: [
       {
         title: "Fly Away (feat. The Tones)",

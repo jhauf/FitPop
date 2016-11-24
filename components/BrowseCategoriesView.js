@@ -1,5 +1,5 @@
 import React from 'react';
-import TrackCell from './TrackCell';
+import CategoryCell from './CategoryCell';
 
 import {
   AppRegistry,
@@ -21,16 +21,16 @@ export default class BrowseCategoriesView extends React.Component {
     const ds = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
     });
-    this.renderTrack = this.renderTrack.bind(this);
+    this.renderCategory = this.renderCategory.bind(this);
     this.state = {
       dataSource: ds.cloneWithRows(Artists)
     };
   }
 
 
-  renderTrack(track) {
+  renderCategory(category) {
     return (
-      <TrackCell navigator={this.props.navigator} track={track}/>
+      <CategoryCell navigator={this.props.navigator} category={category}/>
     );
   }
 
@@ -39,7 +39,7 @@ export default class BrowseCategoriesView extends React.Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={this.renderTrack}
+        renderRow={this.renderCategory}
         style={styles.listView}/>
     );
   }

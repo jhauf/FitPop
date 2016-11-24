@@ -25,11 +25,11 @@ export default class FitPop extends Component {
             title: 'FitPop',
             component: BrowseCategoriesView
           }} />
-        <NowPlayingFooterView />
      </View>
     );
   }
 }
+// <NowPlayingFooterView />
 
 export const styles = StyleSheet.create({
   appContainer: {
