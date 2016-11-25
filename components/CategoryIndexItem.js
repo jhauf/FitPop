@@ -1,5 +1,5 @@
 import React from 'react';
-import CategoryScreen from './CategoryScreen';
+import CategoryItemDetail from './CategoryItemDetail';
 import { TouchableHighlight } from 'react-native';
 
 
@@ -10,7 +10,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-export default class CategoryCell extends React.Component {
+export default class CategoryIndexItem extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -18,7 +18,7 @@ export default class CategoryCell extends React.Component {
   selectCategory(category) {
    this.props.navigator.push({
      title: category.title,
-     component: CategoryScreen,
+     component: CategoryItemDetail,
      passProps: {category}
     });
   }

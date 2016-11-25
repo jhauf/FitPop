@@ -4,35 +4,20 @@ const Artists = [
     background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
     songs: [
       {
-        title: "Star Tripper",
-        album: "Still Waters",
-        albumImage: "http://www.clashmusic.com/sites/default/files/field/image/Breakbot%20%20Still%20Waters.jpg",
-        url: "https://api.soundcloud.com/tracks/254196631/stream?client_id=8a754483a114344c70ab15f20a5035ab",
+        title: "Beginner Spin",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
       },
       {
-        title: "You Should Know (feat. Ruckazoid)",
-        album: "Still Waters",
-        albumImage: "http://images.junostatic.com/full/CS2032801-02A-BIG.jpg",
-        url: "https://api.soundcloud.com/tracks/99534378/stream?client_id=8a754483a114344c70ab15f20a5035ab",
+        title: "Intermediate Spin",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019775/Intermediate_Spin_s6lyoj.mp3",
       },
       {
-        title: "Bedtime Stories Mix",
-        album: "Mixtape",
-        albumImage: "https://edbangerla.files.wordpress.com/2013/07/artworks-000052534531-4p2uyd-t500x500.jpg",
-        url: "https://api.soundcloud.com/tracks/99516198/stream?client_id=8a754483a114344c70ab15f20a5035ab",
-      },
-      {
-        title: "Nightcall",
-        album: "By Your Side",
-        albumImage: "https://fanart.tv/fanart/music/eb6de5f6-98f8-4b5a-bfdc-f87fa4936baa/artistbackground/-4f70ac2a1f207.jpg",
-        url: "https://api.soundcloud.com/tracks/9738949/stream?client_id=8a754483a114344c70ab15f20a5035ab",
-      },
-      {
-        title: "Baby",
-        album: "By Your Side",
-        albumImage: "https://upload.wikimedia.org/wikipedia/en/4/48/Pnau_alternate_cover.jpg",
-        url: "https://api.soundcloud.com/tracks/9737435/stream?client_id=8a754483a114344c70ab15f20a5035ab",
-      },
+        title: "Advanced Spin",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480020564/Advanced_Spin_mkc2uz.mp3",
+      }
     ]
   },
   {
@@ -40,25 +25,15 @@ const Artists = [
     background: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
     songs: [
       {
-        title: "Marooned",
-        album: "The Division Bell",
+        title: "Meditation",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
         url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
       },
       {
-        title: "Sorrow",
-        album: "Delicate Sound of Thunder",
+        title: "Restorative Yoga",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
         url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Yet Another Movie",
-        album: "A Momentary Lapse of Reason",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "One of the Few",
-        album: "The Final Cut",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
+      }
     ]
   },
   {
@@ -66,40 +41,20 @@ const Artists = [
     background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
     songs: [
       {
-        title: "Something",
-        album: "Abbey Road",
+        title: "Beginner Tread",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
         url: "https://mp3l.jamendo.com/?trackid=1314632&format=mp31&from=app-97dab294",
       },
       {
-        title: "Hey Bulldog",
-        album: "Yellow Submarine",
+        title: "HIIT",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
         url: "https://mp3l.jamendo.com/?trackid=1312012&format=mp31&from=app-97dab294",
       },
       {
-        title: "Happiness is a Warm Gun",
-        album: "The Beatles",
+        title: "Advanced Tread",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
         url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Maggie Mae",
-        album: "Let It Be",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Polythene Pam",
-        album: "Abbey Road",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Being For The Benefit Of Mr. Kite!",
-        album: "Sgt. Pepper's Lonely Hearts Club Band",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "I'm Only Sleeping",
-        album: "Revolver",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
+      }
     ]
   },
   {
@@ -108,34 +63,19 @@ const Artists = [
     songs: [
       {
         title: "Giorgio",
-        album: "Random Access Memories",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
         url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
       },
       {
         title: "Face to Face",
-        album: "Daft Club",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
         url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
       },
       {
-        title: "Robot Rock",
-        album: "Human After All",
+        title: "Face to Face",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
         url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Ouverture",
-        album: "Daft Club",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Alive",
-        album: "Musique Vol 1",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Crescendolls",
-        album: "Discovery",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
+      }
     ]
   },
   {
@@ -143,75 +83,12 @@ const Artists = [
     background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960864/Elbow-Plank_idkd7w.jpg",
     songs: [
       {
-        title: "Fly Away (feat. The Tones)",
-        album: "UnFresh",
+        title: "Core Strength",
+        albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960864/Elbow-Plank_idkd7w.jpg",
         url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
       },
     ]
-  },
-  {
-    name: "Jamiroquai",
-    background: "http://jgnatch-dropshare.s3.amazonaws.com/Screen-Shot-2016-03-01-15-33-17/Screen-Shot-2016-03-01-15-33-17.png",
-    songs: [
-      {
-        title: "Seven Days in Sunny June",
-        album: "Dyanmite",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Space Cowboy",
-        album: "The Return of the Space Cowboy",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-    ]
-  },
-  {
-    name: "Illya Kuryaki & The Valderramas",
-    background: "http://jgnatch-dropshare.s3.amazonaws.com/Screen-Shot-2016-03-01-15-35-26/Screen-Shot-2016-03-01-15-35-26.png",
-    songs: [
-      {
-        title: "Funky Futurista",
-        album: "Chances",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Discovery Buda",
-        album: "Versus",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Jaguar House",
-        album: "Chaco",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Safari Espiritual",
-        album: "Chances",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Expedicion al Klama Hama",
-        album: "Versus",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-    ]
-  },
-  {
-    name: "Soda Stereo",
-    background: "http://cnnchile.com/uploads/imagenes/14344020424867_breaking.jpg",
-    songs: [
-      {
-        title: "Un Misil En Mi Placard",
-        album: "Comfort y Musica Para Volar",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-      {
-        title: "Cuando Pase El Temblor",
-        album: "Me Veras Volver",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
-      },
-    ]
-  },
+  }
 ];
 
 module.exports = { Artists: Artists };

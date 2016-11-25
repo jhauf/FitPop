@@ -2,13 +2,13 @@
 
 ### Background
 
-FitPop is an iOS music fitness app build with React Native. It syncs your type of workout with the perfect playlist to deliver an elevated, on-demand audio fitness experience.
+FitPop is an iOS music fitness app build with React Native. It syncs your the motivation of a personal trainer with the perfect playlist to deliver an elevated, on-demand audio fitness experience.
 
 ### Functionality & MVP  
 
 With this app, users will be able to:
 
-- [ ] Listen to playlist based on their workout type
+- [ ] Listen to playlist synced with workout audio
 - [ ] Filter workouts by category
 - [ ] Start, stop, pause and turn up/down music
 - [ ] Play audio in the background if off app page

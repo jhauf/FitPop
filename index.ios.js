@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import BrowseCategoriesView from './components/BrowseCategoriesView';
-import NowPlayingFooterView from './components/NowPlayingFooterView';
+import CategoryIndex from './components/CategoryIndex';
 
 
 import {
@@ -25,7 +24,7 @@ export default class FitPop extends Component {
           barTintColor='#F5FCFF'
           initialRoute={{
             title: 'FitPop',
-            component: BrowseCategoriesView
+            component: CategoryIndex
           }} />
      </View>
     );

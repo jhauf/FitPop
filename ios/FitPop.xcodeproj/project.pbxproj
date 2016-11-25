@@ -27,6 +27,7 @@
 		621997EC1DE6BA4C00A267BC /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 621997EB1DE6BA4B00A267BC /* Fonts */; };
 		621997EF1DE6C2D500A267BC /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 621997EE1DE6C2D500A267BC /* Ionicons.ttf */; };
 		621997FF1DE6CCCC00A267BC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 621997F51DE6CC6500A267BC /* libRNVectorIcons.a */; };
+		62D374301DE79559003AB4C3 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 621997A61DE6686200A267BC /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		A36F36B5BE4F45449DFCB3D8 /* libReactNativeAudioStreaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268B6D08060437E84D7977A /* libReactNativeAudioStreaming.a */; };
 /* End PBXBuildFile section */
@@ -264,6 +265,7 @@
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
+				62D374301DE79559003AB4C3 /* libRCTAnimation.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				5FFF9C655B1C43529546B738 /* libRCTVideo.a in Frameworks */,
 				621997EA1DE6A8C300A267BC /* libStreamingKit.a in Frameworks */,

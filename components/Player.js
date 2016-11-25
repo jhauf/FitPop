@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native';
 import Button from 'react-native-button';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from 'react-native-slider';
 import Video from 'react-native-video';
@@ -15,7 +15,7 @@ import React from 'react';
 
 const window = Dimensions.get('window');
 
-export default class PlayerUI extends React.Component {
+export default class Player extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -23,8 +23,7 @@ export default class PlayerUI extends React.Component {
       muted: false,
       shuffle: false,
       sliding: false,
-      currentTime: 0,
-      songIndex: props.songIndex,
+      currentTime: 0
     };
   }
 
@@ -34,24 +33,6 @@ export default class PlayerUI extends React.Component {
 
   toggleVolume(){
     this.setState({ muted: !this.state.muted });
-  }
-
-  toggleShuffle(){
-    this.setState({ shuffle: !this.state.shuffle });
-  }
-
-  goBackward(){
-    if(this.state.currentTime < 3 && this.state.songIndex !== 0 ){
-      this.setState({
-        songIndex: this.state.songIndex - 1,
-        currentTime: 0,
-      });
-    } else {
-      this.refs.audio.seek(0);
-      this.setState({
-        currentTime: 0,
-      });
-    }
   }
 
 
@@ -123,11 +104,15 @@ export default class PlayerUI extends React.Component {
             repeat={false}/>
 
         <View style={ styles.header }>
-
         </View>
         <View style={ styles.headerClose }>
-          <Icon onPress={ Actions.pop } name="ios-arrow-back-outline" size={15} color="#fff" />
+          <Icon onPress={ Actions.pop } name="ios-arrow-down" size={15} color="#fff" />
         </View>
+        <Image
+          style={ styles.songImage }
+          source={{uri: songPlaying.albumImage,
+                        width: window.width - 30,
+                        height: 300}}/>
         <Text style={ styles.songTitle }>
           { songPlaying.title }
         </Text>
@@ -151,7 +136,6 @@ export default class PlayerUI extends React.Component {
           </View>
         </View>
         <View style={ styles.controls }>
-          <Icon onPress={ this.goBackward.bind(this) } style={ styles.back } name="ios-arrow-back-outline" size={25} color="#fff" />
           { playButton }
           { volumeButton }
         </View>
@@ -259,7 +243,7 @@ const styles = StyleSheet.create({
   }
 });
 
-//TODO: Move this to a Utils file
+
 function withLeadingZero(amount){
   if (amount < 10 ){
     return `0${ amount }`;

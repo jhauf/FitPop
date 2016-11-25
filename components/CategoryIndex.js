@@ -1,5 +1,5 @@
 import React from 'react';
-import CategoryCell from './CategoryCell';
+import CategoryIndexItem from './CategoryIndexItem';
 
 
 import {
@@ -12,27 +12,18 @@ import {
   TextInput
 } from 'react-native';
 
-let SOUNDCLOUD_CLIENT_ID = 'ff3108ddadaeeea1c2cd56d0b3617255';
 import { Artists } from '../MockData';
 
 
-export default class BrowseCategoriesView extends React.Component {
+export default class CategoryIndex extends React.Component {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
     });
-    this.renderCategory = this.renderCategory.bind(this);
     this.state = {
       dataSource: ds.cloneWithRows(Artists)
     };
-  }
-
-
-  renderCategory(category) {
-    return (
-      <CategoryCell navigator={this.props.navigator} category={category}/>
-    );
   }
 
 
@@ -40,7 +31,7 @@ export default class BrowseCategoriesView extends React.Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={this.renderCategory}
+        renderRow={(category)=> (<CategoryIndexItem navigator={this.props.navigator} category={category}/>)}
         style={styles.listView}/>
     );
   }
