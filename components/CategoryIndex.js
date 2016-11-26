@@ -12,7 +12,7 @@ import {
   TextInput
 } from 'react-native';
 
-import { Artists } from '../MockData';
+import { Categories } from '../WorkoutData';
 
 
 export default class CategoryIndex extends React.Component {
@@ -22,24 +22,17 @@ export default class CategoryIndex extends React.Component {
       rowHasChanged: (row1, row2) => row1 !== row2,
     });
     this.state = {
-      dataSource: ds.cloneWithRows(Artists)
+      dataSource: ds.cloneWithRows(Categories)
     };
   }
-
 
   render() {
     return (
       <ListView
         dataSource={this.state.dataSource}
         renderRow={(category)=> (<CategoryIndexItem navigator={this.props.navigator} category={category}/>)}
-        style={styles.listView}/>
+        />
     );
   }
 
 }
-
-const styles = StyleSheet.create({
-  listView: {
-     backgroundColor: '#F5FCFF'
-  }
-});

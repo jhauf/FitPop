@@ -1,3 +1,4 @@
+'use strict';
 import {
   AppRegistry,
   Image,
@@ -6,12 +7,13 @@ import {
   Text,
   View
 } from 'react-native';
+import React from 'react';
 import Button from 'react-native-button';
-import { Actions } from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from 'react-native-slider';
 import Video from 'react-native-video';
-import React from 'react';
+
 
 const window = Dimensions.get('window');
 
@@ -23,7 +25,7 @@ export default class Player extends React.Component {
       muted: false,
       shuffle: false,
       sliding: false,
-      currentTime: 0
+      currentTime: 0,
     };
   }
 
@@ -34,8 +36,6 @@ export default class Player extends React.Component {
   toggleVolume(){
     this.setState({ muted: !this.state.muted });
   }
-
-
 
   setTime(params){
     if( !this.state.sliding ){
@@ -66,6 +66,26 @@ export default class Player extends React.Component {
   }
 
 
+  withLeadingZero(amount){
+    if (amount < 10 ){
+      return `0${ amount }`;
+    } else {
+      return `${ amount }`;
+    }
+  }
+
+  formattedTime( timeInSeconds ){
+    let minutes = Math.floor(timeInSeconds / 60);
+    let seconds = timeInSeconds - minutes * 60;
+
+    if( isNaN(minutes) || isNaN(seconds) ){
+      return "";
+    } else {
+      return(`${ this.withLeadingZero.bind(this, minutes ) }:${ this.withLeadingZero.bind(this,seconds.toFixed(0) ) }`);
+    }
+  }
+
+
   render() {
     let songPlaying = this.props.song;
     let songPercentage;
@@ -82,6 +102,7 @@ export default class Player extends React.Component {
       playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-play" size={70} color="#fff" />;
     }
 
+
     let volumeButton;
     if( this.state.muted ){
       volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-volume-off" size={18} color="#fff" />;
@@ -90,10 +111,13 @@ export default class Player extends React.Component {
     }
 
 
+
+    let image = songPlaying.albumImage ? songPlaying.albumImage : this.props.artist.background;
     return (
       <View style={styles.container}>
+        <View>
         <Video source={{uri: songPlaying.url }}
-            ref="audio"
+          ref = "audio"
             volume={ this.state.muted ? 0 : 1.0}
             muted={false}
             paused={!this.state.playing}
@@ -102,7 +126,7 @@ export default class Player extends React.Component {
             onEnd={ this.onEnd.bind(this) }
             resizeMode="cover"
             repeat={false}/>
-
+          </View>
         <View style={ styles.header }>
         </View>
         <View style={ styles.headerClose }>
@@ -110,7 +134,7 @@ export default class Player extends React.Component {
         </View>
         <Image
           style={ styles.songImage }
-          source={{uri: songPlaying.albumImage,
+          source={{uri: image,
                         width: window.width - 30,
                         height: 300}}/>
         <Text style={ styles.songTitle }>
@@ -131,8 +155,8 @@ export default class Player extends React.Component {
             value={ songPercentage }/>
 
           <View style={ styles.timeInfo }>
-            <Text style={ styles.time }>{ formattedTime(this.state.currentTime)  }</Text>
-            <Text style={ styles.timeRight }>- { formattedTime( this.state.songDuration - this.state.currentTime ) }</Text>
+            <Text style={ styles.time }>{ this.formattedTime.bind(this, this.state.currentTime)  }</Text>
+            <Text style={ styles.timeRight }>- { this.formattedTime.bind(this, this.state.songDuration - this.state.currentTime ) }</Text>
           </View>
         </View>
         <View style={ styles.controls }>
@@ -242,23 +266,3 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
   }
 });
-
-
-function withLeadingZero(amount){
-  if (amount < 10 ){
-    return `0${ amount }`;
-  } else {
-    return `${ amount }`;
-  }
-}
-
-function formattedTime( timeInSeconds ){
-  let minutes = Math.floor(timeInSeconds / 60);
-  let seconds = timeInSeconds - minutes * 60;
-
-  if( isNaN(minutes) || isNaN(seconds) ){
-    return "";
-  } else {
-    return(`${ withLeadingZero( minutes ) }:${ withLeadingZero( seconds.toFixed(0) ) }`);
-  }
-}

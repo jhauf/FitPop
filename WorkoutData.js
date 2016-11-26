@@ -1,4 +1,4 @@
-const Artists = [
+const Categories = [
   {
     name: "Spin",
     background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
@@ -27,12 +27,12 @@ const Artists = [
       {
         title: "Meditation",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
       },
       {
         title: "Restorative Yoga",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019775/Intermediate_Spin_s6lyoj.mp3",
       }
     ]
   },
@@ -43,17 +43,17 @@ const Artists = [
       {
         title: "Beginner Tread",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
-        url: "https://mp3l.jamendo.com/?trackid=1314632&format=mp31&from=app-97dab294",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
       },
       {
         title: "HIIT",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
-        url: "https://mp3l.jamendo.com/?trackid=1312012&format=mp31&from=app-97dab294",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019775/Intermediate_Spin_s6lyoj.mp3",
       },
       {
         title: "Advanced Tread",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960228/2015-Horizon-treadmill-best-treadmills_wozg1u.jpg",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480020564/Advanced_Spin_mkc2uz.mp3",
       }
     ]
   },
@@ -62,19 +62,19 @@ const Artists = [
     background: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
     songs: [
       {
-        title: "Giorgio",
+        title: "Strength Training",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
       },
       {
-        title: "Face to Face",
+        title: "Resistance Training",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019775/Intermediate_Spin_s6lyoj.mp3",
       },
       {
-        title: "Face to Face",
+        title: "Power Lift",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480020564/Advanced_Spin_mkc2uz.mp3",
       }
     ]
   },
@@ -85,10 +85,10 @@ const Artists = [
       {
         title: "Core Strength",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479960864/Elbow-Plank_idkd7w.jpg",
-        url: "https://www.freesound.org/data/previews/208/208096_3767678-lq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
       },
     ]
   }
 ];
 
-module.exports = { Artists: Artists };
+module.exports = { Categories: Categories };

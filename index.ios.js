@@ -13,9 +13,6 @@ import {
 export default class FitPop extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      nowPlaying: null
-    };
   }
   render() {
     return (
@@ -30,22 +27,15 @@ export default class FitPop extends Component {
     );
   }
 }
-// <NowPlayingFooterView />
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     paddingTop: 20,
     backgroundColor: '#F5FCFF'
   },
-  player: {
-    backgroundColor: 'black'
-  },
   navContainer: {
     flex: 1
-  },
-  listView: {
-     backgroundColor: '#F5FCFF',
   }
 });
 
