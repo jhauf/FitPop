@@ -8,10 +8,11 @@ import {
   View
 } from 'react-native';
 import React from 'react';
+import Button from 'react-native-button';
 import {Actions} from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Slider from 'react-native-slider';
 import Video from 'react-native-video';
+import Slider from 'react-native-slider';
 
 
 const window = Dimensions.get('window');
@@ -120,17 +121,12 @@ export default class Player extends React.Component {
             volume={ this.state.muted ? 0 : 1.0}
             muted={false}
             paused={!this.state.playing}
-            onLoad={ this.onLoad.bind(this) }
-            onProgress={ this.setTime.bind(this) }
-            onEnd={ this.onEnd.bind(this) }
+            _onLoad={ this.onLoad.bind(this) }
+            _onProgress={ this.setTime.bind(this) }
+            _onEnd={ this.onEnd.bind(this) }
             resizeMode="cover"
             repeat={false}/>
           </View>
-        <View style={ styles.header }>
-        </View>
-        <View style={ styles.headerClose }>
-          <Icon onPress={ Actions.pop } name="ios-arrow-down" size={15} color="#fff" />
-        </View>
         <Image
           style={ styles.songImage }
           source={{uri: image,

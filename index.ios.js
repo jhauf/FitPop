@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CategoryIndex from './components/CategoryIndex';
 
 
@@ -10,7 +10,7 @@ import {
   NavigatorIOS
 } from 'react-native';
 
-export default class FitPop extends Component {
+export default class FitPop extends React.Component {
   constructor(props) {
     super(props);
   }
