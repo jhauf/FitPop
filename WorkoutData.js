@@ -30,13 +30,13 @@ const Categories = [
       {
         title: "Meditation",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
-        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
-        songDuration: 1200
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480226420/Meditation_11.23.16_wkpahp.m4a",
+        songDuration: 600
       },
       {
-        title: "Restorative Yoga",
+        title: "Yoga Tone",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/c_scale,h_762/v1479958134/o-WOMEN-YOGA-CLASS-facebook_dzeahi.jpg",
-        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019775/Intermediate_Spin_s6lyoj.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/eo_600,so_0/v1480227464/Morning_-_Yoga_mvfz70.mp3",
         songDuration: 1200
       }
     ]
