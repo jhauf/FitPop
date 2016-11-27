@@ -1,4 +1,4 @@
-'use strict';
+
 import {
   AppRegistry,
   Image,
@@ -8,164 +8,109 @@ import {
   View
 } from 'react-native';
 import React from 'react';
-import {Actions} from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Slider from 'react-native-slider';
 import Video from 'react-native-video';
-
+import Slider from 'react-native-slider';
+var TimerMixin = require('react-timer-mixin');
 
 const window = Dimensions.get('window');
 
-export default class Player extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      playing: true,
-      muted: false,
-      shuffle: false,
-      sliding: false,
-      currentTime: 0,
-    };
-  }
+var Player = React.createClass({
+  mixins: [TimerMixin],
 
-  togglePlay(){
-    this.setState({ playing: !this.state.playing });
-  }
-
-  toggleVolume(){
-    this.setState({ muted: !this.state.muted });
-  }
-
-  setTime(params){
-    if( !this.state.sliding ){
-      this.setState({ currentTime: params.currentTime });
-    }
-  }
-
-  onLoad(params){
-    this.setState({ songDuration: params.duration });
-  }
-
-  onSlidingStart(){
-    this.setState({ sliding: true });
-  }
-
-  onSlidingChange(value){
-    let newPosition = value * this.state.songDuration;
-    this.setState({ currentTime: newPosition });
-  }
-
-  onSlidingComplete(){
-    this.refs.audio.seek( this.state.currentTime );
-    this.setState({ sliding: false });
-  }
-
-  onEnd(){
-    this.setState({ playing: false });
-  }
+  getInitialState: function() {
+   return {
+     playing: true,
+     muted: false,
+     songDuration: this.props.song.songDuration,
+     currentTime: 0
+   };
+ },
 
 
-  withLeadingZero(amount){
-    if (amount < 10 ){
-      return `0${ amount }`;
-    } else {
-      return `${ amount }`;
-    }
-  }
+  componentDidMount: function() {
+    this.setInterval( () => {
+         this.setState({
+             currentTime: this.state.currentTime + 1
+         });
+      }, 60000);
+  },
 
-  formattedTime( timeInSeconds ){
-    let minutes = Math.floor(timeInSeconds / 60);
-    let seconds = timeInSeconds - minutes * 60;
+    togglePlay: function(){
+      this.setState({ playing: !this.state.playing });
+    },
 
-    if( isNaN(minutes) || isNaN(seconds) ){
-      return "";
-    } else {
-      return(`${ this.withLeadingZero.bind(this, minutes ) }:${ this.withLeadingZero.bind(this,seconds.toFixed(0) ) }`);
-    }
-  }
+    toggleVolume: function(){
+      this.setState({ muted: !this.state.muted });
+    },
 
+    render: function () {
+      let songPlaying = this.props.song;
+      let songPercentage;
+      if( this.state.songDuration !== undefined ){
+        songPercentage = this.state.currentTime / this.state.songDuration;
+      } else {
+        songPercentage = 0;
+      }
 
-  render() {
-    let songPlaying = this.props.song;
-    let songPercentage;
-    if( this.state.songDuration !== undefined ){
-      songPercentage = this.state.currentTime / this.state.songDuration;
-    } else {
-      songPercentage = 0;
-    }
+      let playButton;
+      if( this.state.playing ){
+        playButton = <Icon onPress={ this.togglePlay} style={ styles.play } name="ios-pause" size={70} color="#fff" />;
+      } else {
+        playButton = <Icon onPress={ this.togglePlay } style={ styles.play } name="ios-play" size={70} color="#fff" />;
+      }
 
-    let playButton;
-    if( this.state.playing ){
-      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-pause" size={70} color="#fff" />;
-    } else {
-      playButton = <Icon onPress={ this.togglePlay.bind(this) } style={ styles.play } name="ios-play" size={70} color="#fff" />;
-    }
+      let volumeButton;
+      if( this.state.muted ){
+        volumeButton = <Icon onPress={ this.toggleVolume } style={ styles.volume } name="ios-volume-off" size={18} color="#fff" />;
+      } else {
+        volumeButton = <Icon onPress={ this.toggleVolume } style={ styles.volume } name="ios-volume-up" size={18} color="#fff" />;
+      }
 
-
-    let volumeButton;
-    if( this.state.muted ){
-      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-volume-off" size={18} color="#fff" />;
-    } else {
-      volumeButton = <Icon onPress={ this.toggleVolume.bind(this) } style={ styles.volume } name="ios-volume-up" size={18} color="#fff" />;
-    }
-
-
-
-    let image = songPlaying.albumImage ? songPlaying.albumImage : this.props.artist.background;
-    return (
-      <View style={styles.container}>
-        <View>
-        <Video source={{uri: songPlaying.url }}
-          ref = "audio"
-            volume={ this.state.muted ? 0 : 1.0}
-            muted={false}
-            paused={!this.state.playing}
-            onLoad={ this.onLoad.bind(this) }
-            onProgress={ this.setTime.bind(this) }
-            onEnd={ this.onEnd.bind(this) }
-            resizeMode="cover"
-            repeat={false}/>
+      let image = songPlaying.albumImage;
+      return (
+        <View style={styles.container}>
+          <View>
+          <Video source={{uri: songPlaying.url }}
+            ref = "audio"
+              volume={ this.state.muted ? 0 : 1.0}
+              muted={false}
+              paused={!this.state.playing}
+              resizeMode="cover"
+              />
+            </View>
+          <View style={ styles.header }>
           </View>
-        <View style={ styles.header }>
-        </View>
-        <View style={ styles.headerClose }>
-          <Icon onPress={ Actions.pop } name="ios-arrow-down" size={15} color="#fff" />
-        </View>
-        <Image
-          style={ styles.songImage }
-          source={{uri: image,
-                        width: window.width - 30,
-                        height: 300}}/>
-        <Text style={ styles.songTitle }>
-          { songPlaying.title }
-        </Text>
-        <Text style={ styles.albumTitle }>
-          { songPlaying.album }
-        </Text>
-        <View style={ styles.sliderContainer }>
-          <Slider
-            onSlidingStart={ this.onSlidingStart.bind(this) }
-            onSlidingComplete={ this.onSlidingComplete.bind(this) }
-            onValueChange={ this.onSlidingChange.bind(this) }
-            minimumTrackTintColor='#851c44'
-            style={ styles.slider }
-            trackStyle={ styles.sliderTrack }
-            thumbStyle={ styles.sliderThumb }
-            value={ songPercentage }/>
+          <Image
+            style={ styles.songImage }
+            source={{uri: image,
+                          width: window.width - 30,
+                          height: 300}}/>
+          <Text style={ styles.songTitle }>
+            { songPlaying.title }
+          </Text>
+          <Text style={ styles.albumTitle }>
+            { songPlaying.album }
+          </Text>
+          <View style={ styles.sliderContainer }>
+            <Slider
+              minimumTrackTintColor='#851c44'
+              style={ styles.slider }
+              trackStyle={ styles.sliderTrack }
+              thumbStyle={ styles.sliderThumb }
+              value={ songPercentage }/>
 
-          <View style={ styles.timeInfo }>
-            <Text style={ styles.time }>{ this.formattedTime.bind(this, this.state.currentTime)  }</Text>
-            <Text style={ styles.timeRight }>- { this.formattedTime.bind(this, this.state.songDuration - this.state.currentTime ) }</Text>
+          </View>
+          <View style={ styles.controls }>
+            { playButton }
+            { volumeButton }
           </View>
         </View>
-        <View style={ styles.controls }>
-          { playButton }
-          { volumeButton }
-        </View>
-      </View>
-    );
-  }
-}
+      );
+    }
+});
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -265,3 +210,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
   }
 });
+
+module.exports = Player;
