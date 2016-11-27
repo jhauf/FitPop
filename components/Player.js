@@ -20,25 +20,33 @@ var Player = React.createClass({
 
   getInitialState: function() {
    return {
-     playing: true,
+     playing: false,
      muted: false,
      songDuration: this.props.song.songDuration,
-     currentTime: 0
-   };
+     currentTime: 0,
+     timer: 0,
+ };
+},
+
+componentWillUnmount: function () {
+  this.clearInterval(this.timer);
+},
+
+ Play: function() {
+   this.setState({ playing: true });
+   this.timer = this.setInterval( () => {
+     this.setState({
+       currentTime: this.state.currentTime + 1
+     });
+   }, 600);
  },
 
+ Pause: function() {
+  this.setState({ playing: false });
+   this.clearInterval(this.timer);
+   this.timer = 0;
+ },
 
-  componentDidMount: function() {
-    this.setInterval( () => {
-         this.setState({
-             currentTime: this.state.currentTime + 1
-         });
-      }, 60000);
-  },
-
-    togglePlay: function(){
-      this.setState({ playing: !this.state.playing });
-    },
 
     toggleVolume: function(){
       this.setState({ muted: !this.state.muted });
@@ -55,9 +63,9 @@ var Player = React.createClass({
 
       let playButton;
       if( this.state.playing ){
-        playButton = <Icon onPress={ this.togglePlay} style={ styles.play } name="ios-pause" size={70} color="#fff" />;
+        playButton = <Icon onPress={ this.Pause} style={ styles.play } name="ios-pause" size={70} color="#fff" />;
       } else {
-        playButton = <Icon onPress={ this.togglePlay } style={ styles.play } name="ios-play" size={70} color="#fff" />;
+        playButton = <Icon onPress={ this.Play } style={ styles.play } name="ios-play" size={70} color="#fff" />;
       }
 
       let volumeButton;
