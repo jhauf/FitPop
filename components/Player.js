@@ -38,7 +38,7 @@ componentWillUnmount: function () {
      this.setState({
        currentTime: this.state.currentTime + 1
      });
-   }, 600);
+   }, 1000);
  },
 
  Pause: function() {
@@ -46,6 +46,24 @@ componentWillUnmount: function () {
    this.clearInterval(this.timer);
    this.timer = 0;
  },
+ withLeadingZero(amount){
+  if (amount < 10 ){
+    return `0${ amount }`;
+  } else {
+    return `${ amount }`;
+  }
+},
+
+formattedTime( timeInSeconds ){
+  let minutes = Math.floor(timeInSeconds / 60);
+  let seconds = timeInSeconds - minutes * 60;
+
+  if( isNaN(minutes) || isNaN(seconds) ){
+    return "";
+  } else {
+    return(`${ this.withLeadingZero( minutes ) }:${ this.withLeadingZero( seconds.toFixed(0) ) }`);
+  }
+},
 
 
     toggleVolume: function(){
@@ -107,7 +125,10 @@ componentWillUnmount: function () {
               trackStyle={ styles.sliderTrack }
               thumbStyle={ styles.sliderThumb }
               value={ songPercentage }/>
-
+              <View style={ styles.timeInfo }>
+             <Text style={ styles.time }>{ this.formattedTime(this.state.currentTime)  }</Text>
+             <Text style={ styles.timeRight }>- { this.formattedTime( this.state.songDuration - this.state.currentTime ) }</Text>
+           </View>
           </View>
           <View style={ styles.controls }>
             { playButton }
