@@ -4,7 +4,7 @@ FitPop live
 
 ### Background
 
-FitPop is an iOS music fitness app build with React Native, JavaScript and XCode. It syncs the motivation of a personal trainer with the perfect playlist to deliver an on-demand audio fitness experience.
+FitPop is an iOS music fitness app build with `React Native`, `JavaScript` and `XCode`. It syncs the motivation of a personal trainer with the perfect playlist to deliver an on-demand audio fitness experience.
 
 ### Features  
 
@@ -15,7 +15,7 @@ With this app, users are able to:
 - [ ] Start and pause audio, and turn off and on volume
 
 ### Implementation
-From the core React-Native library, FitPop utilizes React-Native UI Components such as `ListViewDataSource` to store the workout data and `NavigatorIOS` to navigate between the different components. It also leverages custom libraries such as `React-Native-Video`,`React-Native-Slider` and the `React-Timer-Mixin` for the audio Player, installed using `Node.js` and `XCode`.
+From the core React-Native library, FitPop utilizes React-Native UI Components such as `ListViewDataSource` to store the workout data and `NavigatorIOS` to navigate between the different components. It also leverages custom libraries such as `React-Native-Video`,`React-Native-Slider` and the `React-Timer-Mixin` for the audio Player, installed using `Node.js` and `XCode`. To promote scalability, it utilizes the `Cloudinary API` for audio and image storage.
 
 
 ##Categories

@@ -6,7 +6,7 @@ const Categories = [
       {
         title: "Beginner Spin",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
-        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
+        url: "http://res.cloudinary.com/dps0ohgkp/video/upload/so_20/v1480019241/BeginnerSpin_zdaviq.mp3",
         songDuration: 1200
       },
       {
@@ -72,8 +72,8 @@ const Categories = [
       {
         title: "Strength Training",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479959165/15056009794_f9eef212b9_k_ppfovt.jpg",
-        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/v1480019241/BeginnerSpin_zdaviq.mp3",
-        songDuration: 1200
+        url: "http://res.cloudinary.com/dps0ohgkp/video/upload/eo_600,so_10/v1480228574/Kelli_s_Superset_Total_Body_Strength_Workout-_Calorie_Torching__Muscle_Building__g6yh8g.mp3",
+        songDuration: 600
       },
       {
         title: "Resistance Training",
