@@ -18,7 +18,8 @@ export default class CategoryIndexItem extends React.Component {
    this.props.navigator.push({
      title: category.name,
      component: CategoryItemDetail,
-     passProps: {category}
+     passProps: {category},
+     barTintColor: '#FFFFFF'
     });
   }
 

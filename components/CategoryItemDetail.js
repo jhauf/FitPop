@@ -28,8 +28,7 @@ export default class CategoryItemDetail extends React.Component {
       title: song.title,
       component: Player,
       passProps: { song },
-      barTintColor: '#F5FCFF',
-      backgroundColor: '#F5FCFF',
+      barTintColor: '#FFFFFF',
      });
   }
 

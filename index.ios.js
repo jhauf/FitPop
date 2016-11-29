@@ -19,7 +19,8 @@ export default class FitPop extends React.Component {
         <NavigatorIOS style={styles.container}
           initialRoute={{
             title: 'FitPop',
-            component: CategoryIndex
+            component: CategoryIndex,
+            barTintColor: '#FFFFFF'
           }} />
      </View>
     );
