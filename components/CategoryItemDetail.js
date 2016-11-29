@@ -1,11 +1,25 @@
 import React from 'react';
-import { StyleSheet, View, Image, Text, TouchableOpacity, ListView } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TouchableHighlight,
+  ListView
+} from 'react-native';
+
 import Player from './Player';
 
 
 export default class CategoryItemDetail extends React.Component {
   constructor(props) {
     super(props);
+    const ds = new ListView.DataSource({
+      rowHasChanged: (row1, row2) => row1 !== row2,
+    });
+    this.state = {
+      dataSource: ds.cloneWithRows(this.props.category.songs)
+    };
     this.selectSong = this.selectSong.bind(this);
   }
 
@@ -20,20 +34,19 @@ export default class CategoryItemDetail extends React.Component {
   }
 
   render() {
-    let songsDataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }).cloneWithRows( this.props.category.songs );
     return(
       <ListView
-        dataSource={ songsDataSource }
-        style={ styles.songsList }
+        dataSource={this.state.dataSource}
+        style={styles.songsList}
         renderRow={(song, sectionId, rowId) => {
           return (
-            <TouchableOpacity onPress={() => this.selectSong(song)}>
-            <View key={song} style={ styles.song }>
-            <Text style={ styles.songTitle } >
-              { song.title }
+            <TouchableHighlight onPress={() => this.selectSong(song)}>
+            <View key={song} style={styles.song}>
+            <Text style={styles.songTitle} >
+              {song.title}
             </Text>
           </View>
-        </TouchableOpacity>);
+        </TouchableHighlight>);
         }}/>
     );
   }
@@ -42,12 +55,12 @@ export default class CategoryItemDetail extends React.Component {
 const styles = StyleSheet.create({
   songsList: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#000000",
     paddingTop: 5,
   },
   song: {
     borderBottomWidth: 1,
-    borderBottomColor: "#111",
+    borderBottomColor: "#111111",
     paddingTop: 20,
     paddingBottom: 20,
     marginLeft: 20,
@@ -56,6 +69,7 @@ const styles = StyleSheet.create({
   songTitle: {
     color: "white",
     fontFamily: "Helvetica Neue",
+    fontSize: 18,
     marginBottom: 5,
   },
 });

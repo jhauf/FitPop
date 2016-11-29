@@ -18,21 +18,20 @@ export default class CategoryIndexItem extends React.Component {
    this.props.navigator.push({
      title: category.name,
      component: CategoryItemDetail,
-     passProps: {category},
-     barTintColor: '#F5FCFF'
+     passProps: {category}
     });
   }
 
 render() {
  return (
-   <TouchableHighlight onPress={() => this.selectCategory(this.props.category)} activeOpacity={ 100 } underlayColor="#ea4b54">
+   <TouchableHighlight onPress={() => this.selectCategory(this.props.category)}>
      <Image
       resizeMode='cover'
       source={{ uri: this.props.category.background }}
       >
    <View style={ styles.container }>
-     <Text style={ styles.categoryName }>{ this.props.category.name }</Text>
-     <Text style={ styles.categorySongs }>{ this.props.category.songs.length } workouts</Text>
+     <Text style={styles.categoryName}>{this.props.category.name}</Text>
+     <Text style={styles.categorySongs}>{this.props.category.songs.length} workouts</Text>
    </View>
    </Image>
    </TouchableHighlight>
@@ -42,11 +41,11 @@ render() {
 
 const styles = StyleSheet.create({
  container: {
-   backgroundColor: 'rgba(0,0,0,0.6)',
    paddingTop: 20,
    paddingBottom: 60,
    paddingLeft: 20,
    paddingRight: 20,
+   backgroundColor: 'rgba(0,0,0,0.5)'
  },
  categoryName: {
    fontSize: 20,
@@ -55,9 +54,9 @@ const styles = StyleSheet.create({
    fontWeight: "500",
  },
  categorySongs: {
-   fontWeight: "300",
    fontSize: 16,
    color: "#CCCCCC",
    fontFamily: "Helvetica Neue",
+   fontWeight: "300",
  }
 });

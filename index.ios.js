@@ -5,7 +5,6 @@ import CategoryIndex from './components/CategoryIndex';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View,
   NavigatorIOS
 } from 'react-native';
@@ -16,9 +15,8 @@ export default class FitPop extends React.Component {
   }
   render() {
     return (
-      <View style={styles.appContainer}>
-        <NavigatorIOS style={styles.navContainer}
-          barTintColor='#F5FCFF'
+      <View style={styles.container}>
+        <NavigatorIOS style={styles.container}
           initialRoute={{
             title: 'FitPop',
             component: CategoryIndex
@@ -29,12 +27,7 @@ export default class FitPop extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-    paddingTop: 20,
-    backgroundColor: '#F5FCFF'
-  },
-  navContainer: {
+  container: {
     flex: 1
   }
 });

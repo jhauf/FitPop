@@ -6,7 +6,7 @@ const Categories = [
       {
         title: "Beginner Spin",
         albumImage: "https://res.cloudinary.com/dps0ohgkp/image/upload/v1479958530/bigstock-Fit-people-in-a-spin-class-at-105710492_riypmm.jpg",
-        url: "http://res.cloudinary.com/dps0ohgkp/video/upload/so_20/v1480019241/BeginnerSpin_zdaviq.mp3",
+        url: "https://res.cloudinary.com/dps0ohgkp/video/upload/so_20/v1480019241/BeginnerSpin_zdaviq.mp3",
         songDuration: 1200
       },
       {

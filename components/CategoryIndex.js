@@ -1,18 +1,12 @@
 import React from 'react';
 import CategoryIndexItem from './CategoryIndexItem';
-
+import { Categories } from '../WorkoutData';
 
 import {
-  AppRegistry,
   ListView,
-  NavigatorIOS,
-  StyleSheet,
-  Text,
-  View,
-  TextInput
+  StyleSheet
 } from 'react-native';
 
-import { Categories } from '../WorkoutData';
 
 
 export default class CategoryIndex extends React.Component {
