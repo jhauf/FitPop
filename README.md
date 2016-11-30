@@ -2,7 +2,7 @@
 
 ![smallreactnativedemo3]()
 
-[Demo video with sound](http://res.cloudinary.com/dlas5vd9z/video/upload/v1480492809/Short_Demo_qxwama.mov)
+([![Demo video with sound](http://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://youtu.be/4jgXHrS8dBo "Everything Is AWESOME"))
 
 
 ### Background
