@@ -28,7 +28,10 @@ export default class CategoryItemDetail extends React.Component {
       title: song.title,
       component: Player,
       passProps: { song },
-      barTintColor: '#FFFFFF',
+      tintColor: "#d12b4f",
+      barTintColor: "#0a0a0a",
+      titleTextColor: "white"
+
      });
   }
 
@@ -39,7 +42,7 @@ export default class CategoryItemDetail extends React.Component {
         dataSource={this.state.dataSource}
         renderRow={(song, sectionId, rowId) => {
           return (
-            <TouchableHighlight onPress={() => this.selectSong(song)} activeOpacity={50} underlayColor="#ff5722">
+            <TouchableHighlight onPress={() => this.selectSong(song)} activeOpacity={50} underlayColor="#d12b4f">
             <View key={song} style={styles.song}>
             <Text style={styles.songText} >
               {song.title}
@@ -54,11 +57,11 @@ export default class CategoryItemDetail extends React.Component {
 const styles = StyleSheet.create({
   songsList: {
     flex: 1,
-    backgroundColor: "#e2dcd9",
+    backgroundColor: "#000000",
     paddingTop: 5,
   },
   song: {
-    borderBottomWidth: .5,
+    borderBottomWidth: 1,
     borderBottomColor: "#00bcd4",
     paddingTop: 20,
     paddingBottom: 20,

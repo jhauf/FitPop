@@ -72,7 +72,7 @@ var Player = React.createClass({
         </View>
       <Image
         style={styles.songImage}
-        source={{uri: this.props.song.albumImage, width: 350, height: 220}}/>
+        source={{uri: this.props.song.albumImage, width: 300, height: 260}}/>
       <Text style={styles.songText}>
         {this.props.song.title}
       </Text>
@@ -80,20 +80,20 @@ var Player = React.createClass({
         <Slider
           minimumTrackTintColor='#2196f3'
           style={styles.slider}
+          value={songPercentage}
           trackStyle={styles.sliderTrack}
-          thumbStyle={styles.sliderThumb}
-          value={songPercentage}/>
+          thumbStyle={styles.sliderThumb}/>
           <View style={styles.timeInfo}>
          <Text style={styles.time}>{this.formattedTime(this.state.currentTime)}</Text>
          <Text style={styles.timeRight}>- {this.formattedTime(this.state.songDuration - this.state.currentTime)}</Text>
        </View>
       </View>
       <View style={styles.controls}>
-        {this.state.playing ? <Icon onPress={this.Pause} style={styles.play} name="ios-pause" size={70} color="#ffffff" /> :
-        <Icon onPress={this.Play} style={styles.play} name="ios-play" size={70} color="#ffffff" />}
+        {this.state.playing ? <Icon onPress={this.Pause} style={styles.play} name="ios-pause" size={70} color="#fff" /> :
+        <Icon onPress={this.Play} style={styles.play} name="ios-play" size={70} color="#fff" />}
 
-        {this.state.muted ? <Icon onPress={this.toggleVolume} style={styles.volume} name="ios-volume-off" size={18} color="#ffffff" /> :
-        <Icon onPress={this.toggleVolume} style={styles.volume} name="ios-volume-up" size={40} color="#ffffff" />}
+        {this.state.muted ? <Icon onPress={this.toggleVolume} style={styles.volume} name="ios-volume-off" size={40} color="#fff" /> :
+        <Icon onPress={this.toggleVolume} style={styles.volume} name="ios-volume-up" size={40} color="#fff" />}
       </View>
     </View>);
   }
@@ -105,43 +105,47 @@ var Player = React.createClass({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: "#e2dcd9",
+    backgroundColor: 'black'
   },
   songImage: {
-    marginTop: 80,
+    marginTop: 100,
     marginBottom: 20,
+    borderWidth: 1,
+    borderColor: 'black'
+
+
   },
   songText: {
-    color: "white",
-    fontFamily: "Helvetica Neue",
     marginBottom: 10,
     marginTop: 13,
-    fontSize: 19
+    fontSize: 19,
+    color: "black",
+    fontFamily: "Helvetica Neue",
   },
   controls: {
     flexDirection: 'row',
     marginTop: 30,
   },
   play: {
-    marginLeft: 50,
     marginRight: 50,
+    marginLeft: 50,
   },
   volume: {
     marginTop: 15,
   },
   sliderContainer: {
-    width: 335,
+    width: 300,
   },
   timeInfo: {
     flexDirection: 'row',
   },
   time: {
-    color: '#FFF',
+    color: '#fff',
     flex: 1,
     fontSize: 10,
   },
   timeRight: {
-    color: '#FFFFFF',
+    color: '#fff',
     textAlign: 'right',
     flex: 1,
     fontSize: 10,
@@ -151,13 +155,13 @@ var Player = React.createClass({
   },
   sliderTrack: {
     height: 2,
-    backgroundColor: '#333',
+    backgroundColor: '#442082',
   },
   sliderThumb: {
     width: 10,
     height: 10,
     backgroundColor: "#ff5722",
-    borderRadius: 10 / 2,
+    borderRadius: 5,
     shadowColor: 'red',
     shadowOffset: {width: 0, height: 0},
     shadowRadius: 2,

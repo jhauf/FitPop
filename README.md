@@ -1,10 +1,13 @@
 ## FitPop
 
-FitPop live
+![smallreactnativedemo3]()
+
+[Demo video with sound](http://res.cloudinary.com/dlas5vd9z/video/upload/v1480492809/Short_Demo_qxwama.mov)
+
 
 ### Background
 
-FitPop is an iOS music fitness app build with `React Native`, `JavaScript` and `XCode`, which syncs the guidance of a personal trainer with a energetic playlist deliver an elevated workout experience.
+FitPop is an iOS music fitness app build with `React Native` and `JavaScript` which syncs the guidance of a personal trainer with a energetic playlist deliver an elevated workout experience.
 
 ### Features  
 
@@ -34,11 +37,6 @@ The `Player` plays the audio of the workout using `React-Native-Video` with audi
 The `Player` also features a Progress Bar which is created using the `React-Native-Slider`. Its current value is dictated by the current time and workout duration, which are also stored in the internal state of the `Player`.
 
 When the user presses play, setInterval starts and updates the current time, causing the progress bar to re-render each second. Conversely, when the `Player` is paused or the Component unmounts, clearInterval is called.
-
-
-### Wireframes
-
-![wireframe](./FitPop.png)
 
 
 

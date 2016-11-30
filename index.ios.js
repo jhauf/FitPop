@@ -20,7 +20,10 @@ export default class FitPop extends React.Component {
           initialRoute={{
             title: 'FitPop',
             component: CategoryIndex,
-             barTintColor: "#FFFFFF"
+            tintColor: "white",
+            barTintColor: "black",
+            titleTextColor: "white"
+
           }} />
      </View>
     );

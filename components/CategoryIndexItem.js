@@ -6,7 +6,8 @@ import {
   View,
   Image,
   StyleSheet,
-  TouchableHighlight
+  TouchableHighlight,
+  StatusBar
 } from 'react-native';
 
 export default class CategoryIndexItem extends React.Component {
@@ -19,17 +20,24 @@ export default class CategoryIndexItem extends React.Component {
      title: category.name,
      component: CategoryItemDetail,
      passProps: {category},
-     barTintColor: "#FFFFFF"
+     barTintColor: "#0a0a0a",
+     tintColor: "#d12b4f",
+     titleTextColor: "white"
+
     });
   }
 
 render() {
  return (
-   <TouchableHighlight onPress={() => this.selectCategory(this.props.category)} activeOpacity={50} underlayColor="#ff5722">
+   <TouchableHighlight onPress={() => this.selectCategory(this.props.category)} activeOpacity={50} underlayColor="#d12b4f">
      <Image
       resizeMode='cover'
       source={{uri: this.props.category.background}}
       >
+      <StatusBar
+      backgroundColor="blue"
+      barStyle="light-content"
+    />
    <View style={ styles.container}>
      <Text style={styles.categoryName}>{this.props.category.name}</Text>
      <Text style={styles.categorySongs}>{this.props.category.songs.length} workouts</Text>
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
    paddingBottom: 60,
    paddingLeft: 20,
    paddingRight: 20,
-   backgroundColor: 'rgba(39, 29, 37, 0.5)'
+   backgroundColor: 'rgba(0, 0, 0, 0.5)',
  },
  categoryName: {
    fontSize: 20,
@@ -58,6 +66,6 @@ const styles = StyleSheet.create({
    fontSize: 16,
    color: "#FFFFFF",
    fontFamily: "Helvetica Neue",
-   fontWeight: "300",
- }
+   fontWeight: "300"
+  }
 });
