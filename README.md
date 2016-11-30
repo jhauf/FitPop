@@ -1,9 +1,9 @@
 ## FitPop
 
 
-[![gif](./demo.gif)]
+![gif](./demo.gif)
 
-[Demo Video with sound](https://youtu.be/4jgXHrS8dBo)
+[Demo Video with Sound](https://youtu.be/4jgXHrS8dBo)
 
 
 ### Background
