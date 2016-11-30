@@ -1,8 +1,7 @@
 ## FitPop
 
-![smallreactnativedemo3]()
 
-([![Demo video with sound](https://i.ytimg.com/vi/4jgXHrS8dBo/3.jpg)](https://youtu.be/4jgXHrS8dBo "Everything Is AWESOME"))
+[![Demo video with sound](https://i.ytimg.com/vi/4jgXHrS8dBo/3.jpg)](https://youtu.be/4jgXHrS8dBo "Everything Is AWESOME")
 
 
 ### Background
