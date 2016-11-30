@@ -11,7 +11,6 @@ import {
   View
 } from 'react-native';
 
-
 var Player = React.createClass({
   mixins: [TimerMixin],
 
@@ -65,7 +64,7 @@ var Player = React.createClass({
     return (
       <View style={styles.container}>
         <View>
-          <Video source={{uri: this.props.song.url }}
+          <Video source={{uri: this.props.song.url}}
               volume={ this.state.muted ? 0 : 1.0}
               muted={false}
               paused={!this.state.playing}
@@ -73,13 +72,13 @@ var Player = React.createClass({
         </View>
       <Image
         style={styles.songImage}
-        source={{uri: this.props.song.albumImage, width: 345, height: 300}}/>
-      <Text style={ styles.songTitle }>
+        source={{uri: this.props.song.albumImage, width: 350, height: 220}}/>
+      <Text style={styles.songText}>
         {this.props.song.title}
       </Text>
       <View style={styles.sliderContainer}>
         <Slider
-          minimumTrackTintColor='#851c44'
+          minimumTrackTintColor='#2196f3'
           style={styles.slider}
           trackStyle={styles.sliderTrack}
           thumbStyle={styles.sliderThumb}
@@ -106,13 +105,13 @@ var Player = React.createClass({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#000',
+    backgroundColor: "#e2dcd9",
   },
   songImage: {
     marginTop: 80,
     marginBottom: 20,
   },
-  songTitle: {
+  songText: {
     color: "white",
     fontFamily: "Helvetica Neue",
     marginBottom: 10,
@@ -142,7 +141,7 @@ var Player = React.createClass({
     fontSize: 10,
   },
   timeRight: {
-    color: '#FFF',
+    color: '#FFFFFF',
     textAlign: 'right',
     flex: 1,
     fontSize: 10,
@@ -157,7 +156,7 @@ var Player = React.createClass({
   sliderThumb: {
     width: 10,
     height: 10,
-    backgroundColor: '#f62976',
+    backgroundColor: "#ff5722",
     borderRadius: 10 / 2,
     shadowColor: 'red',
     shadowOffset: {width: 0, height: 0},

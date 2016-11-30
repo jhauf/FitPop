@@ -35,13 +35,13 @@ export default class CategoryItemDetail extends React.Component {
   render() {
     return(
       <ListView
-        dataSource={this.state.dataSource}
         style={styles.songsList}
+        dataSource={this.state.dataSource}
         renderRow={(song, sectionId, rowId) => {
           return (
-            <TouchableHighlight onPress={() => this.selectSong(song)}>
+            <TouchableHighlight onPress={() => this.selectSong(song)} activeOpacity={50} underlayColor="#ff5722">
             <View key={song} style={styles.song}>
-            <Text style={styles.songTitle} >
+            <Text style={styles.songText} >
               {song.title}
             </Text>
           </View>
@@ -54,19 +54,19 @@ export default class CategoryItemDetail extends React.Component {
 const styles = StyleSheet.create({
   songsList: {
     flex: 1,
-    backgroundColor: "#000000",
+    backgroundColor: "#e2dcd9",
     paddingTop: 5,
   },
   song: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#111111",
+    borderBottomWidth: .5,
+    borderBottomColor: "#00bcd4",
     paddingTop: 20,
     paddingBottom: 20,
     marginLeft: 20,
     marginRight: 20,
   },
-  songTitle: {
-    color: "white",
+  songText: {
+    color: "#FFFFFF",
     fontFamily: "Helvetica Neue",
     fontSize: 18,
     marginBottom: 5,

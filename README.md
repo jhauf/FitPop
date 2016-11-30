@@ -29,7 +29,7 @@ This Component displays the Workouts associated with the Category and has a `onP
 
 ##Player
 
-The `Player` plays the audio of the workout using `React-Native-Video` with audio controls to start, pause and turn off or on the volume. These attributes are store in the internal state of the `Player` as booleans and toggled based on user input.
+The `Player` plays the audio of the workout using `React-Native-Video` with audio controls to start, pause and turn off or on the volume. These attributes are stored in the internal state of the `Player` as booleans and toggled based on user input.
 
 The `Player` also features a Progress Bar which is created using the `React-Native-Slider`. Its current value is dictated by the current time and workout duration, which are also stored in the internal state of the `Player`.
 

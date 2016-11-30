@@ -19,18 +19,18 @@ export default class CategoryIndexItem extends React.Component {
      title: category.name,
      component: CategoryItemDetail,
      passProps: {category},
-     barTintColor: '#FFFFFF'
+     barTintColor: "#FFFFFF"
     });
   }
 
 render() {
  return (
-   <TouchableHighlight onPress={() => this.selectCategory(this.props.category)}>
+   <TouchableHighlight onPress={() => this.selectCategory(this.props.category)} activeOpacity={50} underlayColor="#ff5722">
      <Image
       resizeMode='cover'
-      source={{ uri: this.props.category.background }}
+      source={{uri: this.props.category.background}}
       >
-   <View style={ styles.container }>
+   <View style={ styles.container}>
      <Text style={styles.categoryName}>{this.props.category.name}</Text>
      <Text style={styles.categorySongs}>{this.props.category.songs.length} workouts</Text>
    </View>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
    paddingBottom: 60,
    paddingLeft: 20,
    paddingRight: 20,
-   backgroundColor: 'rgba(0,0,0,0.5)'
+   backgroundColor: 'rgba(39, 29, 37, 0.5)'
  },
  categoryName: {
    fontSize: 20,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
  },
  categorySongs: {
    fontSize: 16,
-   color: "#CCCCCC",
+   color: "#FFFFFF",
    fontFamily: "Helvetica Neue",
    fontWeight: "300",
  }

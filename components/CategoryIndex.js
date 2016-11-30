@@ -7,8 +7,6 @@ import {
   StyleSheet
 } from 'react-native';
 
-
-
 export default class CategoryIndex extends React.Component {
   constructor(props) {
     super(props);
