@@ -1,8 +1,8 @@
 ## FitPop
 
 
-[![Demo video with sound](./demo.gif)](https://youtu.be/4jgXHrS8dBo "Everything Is AWESOME")
-
+[![Demo video with sound](./demo.gif)](https://youtu.be/4jgXHrS8dBo")
+Click for full video with sound
 
 ### Background
 
