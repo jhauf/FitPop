@@ -3,7 +3,7 @@
 
 ![gif](./demo.gif)
 
-[Demo Video with Sound](https://youtu.be/4jgXHrS8dBo)
+[Demo Video with Sound](https://youtu.be/ft88fStSDhA)
 
 
 ### Background
@@ -22,16 +22,16 @@ With this app, users are able to:
 From the core React-Native library, FitPop utilizes React-Native UI Components such as `ListViewDataSource` to store the workout data and `NavigatorIOS` to navigate between the different components. It also leverages custom libraries such as `React-Native-Video`,`React-Native-Slider` and the `React-Timer-Mixin` for the audio Player, linked using `Node.js` and `XCode`. To promote scalability, it utilizes the `Cloudinary API` for audio and image storage.
 
 
-##Categories
+####Categories
 The landing page of the app is the `Category Index`. This Component loops through all Categories in the data and displays each as `Category Index Items`.
 
-##CategoryIndexItem
+####CategoryIndexItem
 Each `Category Index Item` displays the name of the workout as well as an `onPress()` listener which pushes on to navigator the `CategoryIndexDetail` and passes it props of the selected category.
 
-##CategoryIndexDetail
+####CategoryIndexDetail
 This Component displays the Workouts associated with the Category and has a `onPress()` listener which redirects to the `Player` Component, passing in the selected workout as props.  
 
-##Player
+####Player
 
 The `Player` plays the audio of the workout using `React-Native-Video` with audio controls to start, pause and turn off or on the volume. These attributes are stored in the internal state of the `Player` as booleans and toggled based on user input.
 
